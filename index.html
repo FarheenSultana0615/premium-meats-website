@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -8,14 +8,12 @@
     <meta name="keywords" content="halal meat, zabiha, premium meats, round rock butcher, hms certified, halal beef, halal chicken">
     <meta name="author" content="Premium Meats">
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://premiummeats.com/">
     <meta property="og:title" content="Premium Meats | Zabiha Halal Excellence">
     <meta property="og:description" content="Discover the finest Zabiha Halal meats in Round Rock, TX">
     <meta property="og:image" content="https://premiummeats.com/images/social-banner.jpg">
     
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://premiummeats.com/">
     <meta property="twitter:title" content="Premium Meats | Zabiha Halal Excellence">
@@ -27,6 +25,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <script>
         tailwind.config = {
             theme: {
@@ -59,383 +58,15 @@
             }
         }
     </script>
-    <style>
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        body {
-            background: linear-gradient(170deg, #FFF8DC 0%, #FFFAF0 100%);
-        }
-
-        .hero-gradient {
-            background: linear-gradient(135deg, #800000 0%, #A52A2A 100%);
-        }
-
-        .gradient-text {
-            background: linear-gradient(to right, #800000, #660000);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .gold-gradient-text {
-            background: linear-gradient(to right, #D4AF37, #B8860B);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        /* General Animation for Sections */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in-up.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .fade-in-up.stagger {
-            transition-delay: var(--delay, 0s);
-        }
-
-        /* Hero Headline Animation */
-        .hero-headline span {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(20px) scale(0.9);
-            animation: reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-            animation-delay: var(--delay);
-        }
-        @keyframes reveal {
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        /* FAQ Accordion Styling */
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        /* Wave Divider */
-        .wave-divider {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            transform: rotate(180deg);
-        }
-
-        .wave-divider svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 60px;
-        }
-
-        .wave-divider .shape-fill {
-            fill: #FFFFFF;
-        }
-        
-        /* Floating Cart Button for Mobile */
-        .floating-cart-btn {
-            position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            z-index: 40;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            box-shadow: 0 10px 25px rgba(128, 0, 0, 0.35);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .pulse-animation {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: #800000;
-            animation: pulse-slow 2s infinite;
-            z-index: -1;
-        }
-        
-        /* Gradient Border Effect */
-        .gradient-border {
-            position: relative;
-            background: white;
-            border-radius: 1.5rem;
-            z-index: 1;
-        }
-        
-        .gradient-border::before {
-            content: "";
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            width: calc(100% + 4px);
-            height: calc(100% + 4px);
-            background: linear-gradient(45deg, #800000, #D4AF37);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        
-        .gradient-border:hover::before {
-            opacity: 1;
-        }
-        
-        /* Special Offer Glow */
-        .offer-glow {
-            box-shadow: 0 10px 30px -10px rgba(128, 0, 0, 0.3);
-            animation: glow-pulse 2s infinite alternate;
-        }
-        
-        @keyframes glow-pulse {
-            0% { box-shadow: 0 10px 30px -10px rgba(128, 0, 0, 0.3); }
-            100% { box-shadow: 0 10px 40px -5px rgba(128, 0, 0, 0.5); }
-        }
-        
-        /* Animated Background Elements */
-        .bg-circle {
-            position: absolute;
-            border-radius: 50%;
-            z-index: 0;
-        }
-        
-        .bg-circle-1 {
-            width: 300px;
-            height: 300px;
-            top: -150px;
-            right: -150px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%);
-        }
-        
-        .bg-circle-2 {
-            width: 200px;
-            height: 200px;
-            bottom: -100px;
-            left: -100px;
-            background: radial-gradient(circle, rgba(128, 0, 0, 0.15) 0%, rgba(128, 0, 0, 0) 70%);
-        }
-        
-        .bg-circle-3 {
-            width: 150px;
-            height: 150px;
-            top: 50%;
-            left: 10%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%);
-        }
-        
-        .bg-circle-4 {
-            width: 180px;
-            height: 180px;
-            bottom: 20%;
-            right: 10%;
-            background: radial-gradient(circle, rgba(128, 0, 0, 0.15) 0%, rgba(128, 0, 0, 0) 70%);
-        }
-        
-        /* Logo styling */
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo {
-            height: 50px;
-            width: auto;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-        }
-        
-        .logo-text {
-            font-weight: 800;
-            font-size: 1.5rem;
-            letter-spacing: -0.5px;
-            margin-left: 10px;
-        }
-        
-        /* Navigation underline animation */
-        .nav-link {
-            position: relative;
-            padding-bottom: 5px;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #800000;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        /* Product card hover effect */
-        .product-card {
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        /* Testimonial card styling */
-        .testimonial-card {
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        /* Value card styling */
-        .value-card {
-            transition: all 0.3s ease;
-        }
-        
-        .value-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        
-        /* Footer styling */
-        .footer-link {
-            position: relative;
-            display: inline-block;
-            transition: color 0.3s;
-        }
-        
-        .footer-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #FFD700;
-            transition: width 0.3s ease;
-        }
-        
-        .footer-link:hover {
-            color: #FFD700;
-        }
-        
-        .footer-link:hover::after {
-            width: 100%;
-        }
-        
-        /* Map container styling */
-        .map-container {
-            position: relative;
-            overflow: hidden;
-            padding-top: 75%; /* 4:3 Aspect Ratio */
-            border-radius: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e5e7eb;
-        }
-        
-        .map-iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        /* Logo styling */
-        .header-logo {
-            height: 60px;
-            width: auto;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-        }
-        
-        .footer-logo {
-            height: 40px;
-            width: auto;
-        }
-        
-        /* Product image styling */
-        .product-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .product-card:hover .product-image {
-            transform: scale(1.05);
-        }
-        
-        /* Special offer image */
-        .special-offer-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 1rem;
-        }
-        
-        /* Buttons */
-        .btn-primary {
-            background: linear-gradient(to right, #800000, #660000);
-            color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(128, 0, 0, 0.2);
-        }
-        
-        .btn-secondary {
-            background: linear-gradient(to right, #D4AF37, #B8860B);
-            color: #2E2E2E;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-secondary:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
-        }
-    </style>
 </head>
-<body class="bg-brand-cream text-text-main antialiased relative overflow-x-hidden">
+<body class="bg-brand-cream text-text-main antialiased relative">
 
-    <!-- Animated Background Elements -->
     <div class="bg-circle bg-circle-1"></div>
     <div class="bg-circle bg-circle-2"></div>
     <div class="bg-circle bg-circle-3"></div>
     <div class="bg-circle bg-circle-4"></div>
 
-    <div id="notification" class="fixed top-5 right-5 bg-brand-maroon text-white px-6 py-3 rounded-lg shadow-lg z-[100] transform translate-x-[calc(100%+2rem)] transition-transform duration-300">
+    <div id="notification" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-brand-maroon text-white px-6 py-3 rounded-lg shadow-lg z-[100] transform translate-y-[200%] transition-transform duration-500 ease-in-out">
         <div class="flex items-center">
             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
             <span id="notification-text">Item added to cart!</span>
@@ -445,14 +76,11 @@
     <header class="bg-brand-cream/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <a href="#home" class="logo-container" aria-label="Premium Meats Home">
-                    <div>
-                        <!-- Logo added here -->
-                        <img src="logo.png" alt="Premium Meats Logo" class="header-logo">
-                        <span class="hidden md:block font-display font-extrabold text-2xl ml-3 text-brand-maroon tracking-tight">
-                        Premium Meats
-                        </span>
-                    </div>
+                <a href="#home" class="logo-container flex items-center" aria-label="Premium Meats Home">
+                    <img src="logo.png" alt="Premium Meats Logo" class="header-logo">
+                    <span class="hidden md:block font-display font-extrabold text-2xl ml-3 text-brand-maroon tracking-tight">
+                    Premium Meats
+                    </span>
                 </a>
                 
                 <nav class="hidden md:flex items-center space-x-8 text-text-muted font-semibold">
@@ -498,7 +126,6 @@
         </div>
     </header>
 
-    <!-- Floating Cart Button for Mobile -->
     <button onclick="toggleCart()" class="md:hidden floating-cart-btn bg-brand-maroon text-white">
         <div class="pulse-animation"></div>
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
@@ -536,7 +163,6 @@
                 </div>
             </div>
             
-            <!-- Wave Divider -->
             <div class="wave-divider">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                     <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
@@ -552,22 +178,18 @@
                     <div class="order-2 lg:order-1">
                         <span class="font-bold text-brand-maroon">THIS WEEK'S FEATURE</span>
                         <h2 class="text-3xl md:text-4xl font-extrabold text-text-main mt-2 mb-4">Chicken Lollipop</h2>
-                        <p class="text-text-muted mb-6 text-lg">Taste the Yum! Our Signature Chicken Lollipops Are Here!
-
-                         An easy win for family dinners, game nights, or any time you crave something special.
-
-                        </p>
+                        <p class="text-text-muted mb-6 text-lg">Taste the Yum! Our Signature Chicken Lollipops Are Here! An easy win for family dinners, game nights, or any time you crave something special.</p>
                         <div class="flex items-center gap-4 mb-6">
                             <span class="text-3xl font-bold text-brand-maroon">$18.99 /lb</span>
                             <span class="text-xl text-text-muted line-through">$21.99 /lb</span>
                         </div>
                         <button onclick="addToCart(1)" class="btn-primary px-6 py-3 rounded-lg font-semibold">
-                            Add to Cart
+                            Add Special Offer to Cart
                         </button>
                     </div>
                     <div class="order-1 lg:order-2">
                         <div class="rounded-xl overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105">
-                            <img src="chicken lollipop.jpg" alt="Chicken Lollipop" class="special-offer-image">
+                            <img src="chicken-lollipop.jpg" alt="Chicken Lollipop" class="special-offer-image">
                         </div>
                     </div>
                 </div>
@@ -592,8 +214,7 @@
                 </div>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="product-list">
-                    <!-- Products will be dynamically added here -->
-                </div>
+                    </div>
             </div>
         </section>
 
@@ -638,25 +259,22 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="testimonial-card bg-gradient-to-b from-white to-brand-cream p-8 rounded-xl shadow-lg border border-stone-200">
-                        <div class="flex mb-4">
-                            <svg class="w-5 h-5 text-brand-gold fill-current" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                            <svg class="w-5 h-5 text-brand-gold fill-current" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        <div class="text-brand-gold mb-4">
+                           ★★★★★
                         </div>
                         <p class="text-text-muted mb-6">"The best halal meat in town, without a doubt. The quality of the ribeye is incredible, and knowing it's HMS certified gives me peace of mind."</p>
                         <div class="flex items-center"><div class="w-12 h-12 rounded-full bg-brand-maroon text-white flex items-center justify-center font-bold text-lg mr-4">A</div><div><p class="font-bold text-text-main">Ahmed K.</p><p class="text-sm text-text-muted">Loyal Customer</p></div></div>
                     </div>
                      <div class="testimonial-card bg-gradient-to-b from-white to-brand-cream p-8 rounded-xl shadow-lg border border-stone-200">
-                        <div class="flex mb-4">
-                            <svg class="w-5 h-5 text-brand-gold fill-current" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                            <svg class="w-5 h-5 text-brand-gold fill-current" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        <div class="text-brand-gold mb-4">
+                           ★★★★★
                         </div>
                         <p class="text-text-muted mb-6">"I won't buy my chicken from anywhere else. It's always fresh, clean, and tastes amazing. The staff is knowledgeable and friendly too."</p>
                         <div class="flex items-center"><div class="w-12 h-12 rounded-full bg-brand-gold text-white flex items-center justify-center font-bold text-lg mr-4">F</div><div><p class="font-bold text-text-main">Fatima Z.</p><p class="text-sm text-text-muted">Weekly Shopper</p></div></div>
                     </div>
                      <div class="testimonial-card bg-gradient-to-b from-white to-brand-cream p-8 rounded-xl shadow-lg border border-stone-200">
-                        <div class="flex mb-4">
-                            <svg class="w-5 h-5 text-brand-gold fill-current" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                            <svg class="w-5 h-5 text-brand-gold fill-current" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        <div class="text-brand-gold mb-4">
+                           ★★★★★
                         </div>
                         <p class="text-text-muted mb-6">"So happy to have a reliable HMS-certified butcher nearby. The ground beef is perfect for our family meals. Jazak Allah Khair!"</p>
                         <div class="flex items-center"><div class="w-12 h-12 rounded-full bg-brand-maroon-dark text-white flex items-center justify-center font-bold text-lg mr-4">O</div><div><p class="font-bold text-text-main">Omar S.</p><p class="text-sm text-text-muted">Round Rock Resident</p></div></div>
@@ -672,8 +290,7 @@
                     <p class="text-xl text-text-muted max-w-2xl mx-auto">Have questions? We have answers.</p>
                 </div>
                 <div class="max-w-3xl mx-auto space-y-4" id="faq-container">
-                    <!-- FAQ items will be dynamically added here -->
-                </div>
+                    </div>
             </div>
         </section>
 
@@ -694,8 +311,9 @@
                      <div class="rounded-2xl overflow-hidden shadow-xl border border-stone-200 h-full min-h-[300px]">
                         <div class="map-container">
                             <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3433.888543654113!2d-97.6806954!3d30.4907297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644d2424a5e1b9b%3A0x9c98a1a8e0e1d6a8!2sAapka%20Bazar!5e0!3m2!1sen!2sus!4v1710611206668!5m2!1sen!2sus" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3436.561939103988!2d-97.6828753848728!3d30.53424698170701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644d715a3e1b7f9%3A0x6b8655c68f86f731!2sAapka%20Bazaar!5e0!3m2!1sen!2sus!4v1663186835254!5m2!1sen!2sus"
                                 class="map-iframe" 
+                                style="border:0;"
                                 allowfullscreen="" 
                                 loading="lazy" 
                                 referrerpolicy="no-referrer-when-downgrade">
@@ -712,30 +330,23 @@
         <div id="cart-panel" class="absolute inset-y-0 right-0 w-full max-w-md bg-white flex flex-col transform translate-x-full transition-transform duration-300">
             <div class="p-6 border-b border-stone-200 flex items-center justify-between"><h3 class="text-xl font-bold text-text-main">Your Cart</h3><button onclick="toggleCart()" class="text-text-muted hover:text-text-main"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div>
             <div class="flex-1 overflow-y-auto p-6" id="cart-items"></div>
-            <div class="border-t border-stone-200 p-6"><div class="flex justify-between items-center mb-4 font-semibold"><span class="text-lg text-text-muted">Total:</span><span class="text-2xl font-bold text-text-main" id="cart-total">$0.00</span></div><button id="checkout-btn" class="w-full btn-primary py-3 rounded-lg font-semibold shadow-lg">Checkout</button></div>
+            <div class="border-t border-stone-200 p-6 bg-stone-50"><div class="flex justify-between items-center mb-4 font-semibold"><span class="text-lg text-text-muted">Total:</span><span class="text-2xl font-bold text-text-main" id="cart-total">$0.00</span></div><button id="checkout-btn" class="w-full btn-primary py-3 rounded-lg font-semibold shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">Checkout</button></div>
         </div>
     </div>
 
     <footer class="bg-stone-800 text-stone-300 relative">
         <div class="container mx-auto px-4 py-16">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div class="lg:col-span-1 flex flex-col">
                     <a href="#home" class="flex items-center gap-3 mb-6">
-                        <!-- Footer logo added here -->
                         <img src="logo.png" alt="Premium Meats Logo" class="footer-logo">
                         <h3 class="text-xl font-bold text-white">Premium Meats</h3>
                     </a>
                     <p class="text-stone-400 mb-6">Your trusted source for premium Zabiha Halal meats in Round Rock, TX.</p>
                     <div class="flex gap-4">
-                        <a href="#" class="text-stone-400 hover:text-brand-gold-light transition-colors">
-                            <i class="fab fa-facebook-f text-lg"></i>
-                        </a>
-                        <a href="#" class="text-stone-400 hover:text-brand-gold-light transition-colors">
-                            <i class="fab fa-instagram text-lg"></i>
-                        </a>
-                        <a href="#" class="text-stone-400 hover:text-brand-gold-light transition-colors">
-                            <i class="fab fa-twitter text-lg"></i>
-                        </a>
+                        <a href="#" class="text-stone-400 hover:text-brand-gold-light transition-colors"><i class="fab fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="text-stone-400 hover:text-brand-gold-light transition-colors"><i class="fab fa-instagram text-lg"></i></a>
+                        <a href="#" class="text-stone-400 hover:text-brand-gold-light transition-colors"><i class="fab fa-twitter text-lg"></i></a>
                     </div>
                 </div>
                 
@@ -751,11 +362,21 @@
                 </div>
                 
                 <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Our Products</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#products" onclick="filterProducts('beef', this)" class="footer-link text-stone-400">Halal Beef</a></li>
+                        <li><a href="#products" onclick="filterProducts('chicken', this)" class="footer-link text-stone-400">Halal Chicken</a></li>
+                        <li><a href="#products" onclick="filterProducts('mutton', this)" class="footer-link text-stone-400">Halal Mutton</a></li>
+                        <li><a href="#products" onclick="filterProducts('other', this)" class="footer-link text-stone-400">Other Halal Items</a></li>
+                    </ul>
+                </div>
+                
+                <div>
                     <h4 class="text-lg font-bold text-white mb-4">Contact Info</h4>
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3">
                             <i class="fas fa-map-marker-alt text-brand-gold mt-1"></i>
-                            <span class="text-stone-400">1601 S Interstate Frontage Rd, Ste 310<br>Round Rock, TX 78665</span>
+                            <span class="text-stone-400">1601 S Interstate Frontage Rd, Ste 310, Round Rock, TX 78665</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <i class="fas fa-phone text-brand-gold"></i>
@@ -769,248 +390,16 @@
                 </div>
             </div>
             
-            <div class="mt-16 pt-8 border-t border-stone-700 text-center text-stone-500"><p>&copy; 2025 Premium Meats. All Rights Reserved. Jazak Allah Khair for your support!</p></div>
+            <div class="mt-16 pt-8 border-t border-stone-700 text-center text-stone-500"><p>© 2025 Premium Meats. All Rights Reserved. Jazak Allah Khair for your support!</p></div>
         </div>
     </footer>
 
-    <script>
-    // --- DATA ---
-      const products = [
-        { id: 1, name: "Ribeye Steak", price: 18.99, category: "beef", desc: "Premium ribeye, tender and juicy.", image: "ribeye steak.jpg" },
-        { id: 2, name: "Ground Beef", price: 8.99, category: "beef", desc: "Fresh 85/15 ground beef for burgers.", image: "ground beef.jpeg" },
-        { id: 3, name: "Beef Brisket", price: 15.99, category: "beef", desc: "Slow-cooked brisket, fall-off-the-bone tender.", image: "beef brisket.jpg" },
-        { id: 4, name: "Chicken Breast", price: 9.99, category: "chicken", desc: "Boneless, skinless chicken breast.", image: "chicken breast.jpg" },
-        { id: 5, name: "Chicken Thighs", price: 7.99, category: "chicken", desc: "Juicy, bone-in chicken thighs, full of flavor.", image: "chicken thighs.jpg" },
-        { id: 6, name: "Whole Chicken", price: 12.99, category: "chicken", desc: "Fresh whole roaster chicken, family size.", image: "whole chicken.jpg" },
-        { id: 7, name: "Mutton Chops", price: 22.99, category: "mutton", desc: "Premium mutton chops, restaurant quality.", image: "mutton chops.jpg" },
-        { id: 8, name: "Lamb Leg", price: 28.99, category: "mutton", desc: "Tender lamb leg, perfect for special occasions.", image: "lamb leg.jpg" },
-        { id: 9, name: "Ground Lamb", price: 16.99, category: "mutton", desc: "Fresh ground lamb, great for kebabs.", image: "ground lamb.jpg" },
-        { id: 10, name: "Dozen Eggs", price: 4.99, category: "other", desc: "Farm-fresh, free-range eggs.", image: "dozen eggs.jpg" },
-        { id: 11, name: "Goat Meat", price: 24.99, category: "other", desc: "Fresh goat meat, a traditional favorite.", image: "goat meat.jpg" },
-        { id: 12, name: "Beef Liver", price: 6.99, category: "other", desc: "Fresh beef liver, rich in nutrients.", image: "beef liver.jpg" },
-        { id: 13, name: "Lamb Shank", price: 19.99, category: "mutton", desc: "Premium lamb shanks, perfect for slow cooking.", image: "lamb shank.jpg" },
-        { id: 14, name: "Beef Tenderloin", price: 24.99, category: "beef", desc: "The most tender cut of beef, perfect for special occasions.", image: "beef tenderlion.jpg" },
-        { id: 15, name: "Chicken Wings", price: 5.99, category: "chicken", desc: "Fresh chicken wings, great for grilling or frying.", image: "chicken wing.jpg" },
-        { id: 16, name: "Halal Sausages", price: 8.99, category: "other", desc: "Freshly made halal sausages with premium spices.", image: "halal sausages.jpg" }
-    ];
-    const faqs = [
-        { q: "Is all your meat 100% Zabiha Halal?", a: "Yes, absolutely. We are proudly certified by Halal Monitoring Services (HMS). Every product we sell adheres to the strictest standards of Zabiha Halal, ensuring authenticity and peace of mind for our customers." },
-        { q: "Where do you source your meat from?", a: "We partner with trusted local and regional farms that prioritize ethical and humane treatment of animals. Our commitment to quality starts at the source." },
-        { q: "Do you offer delivery?", a: "Currently, we offer online ordering for in-store pickup. This ensures you receive your meat at its peak freshness. We are exploring local delivery options for the near future!" },
-        { q: "Can I place a special order for a specific cut?", a: "Of course! Our expert butchers are happy to accommodate special requests. Please call us or visit the store to discuss your needs, and we'll do our best to prepare the perfect cut for you." }
-    ];
-
-    let cart = [];
-    let currentFilter = 'all';
-
-    // --- CORE FUNCTIONS ---
-    document.addEventListener('DOMContentLoaded', () => {
-        displayProducts();
-        initFaqs();
-        updateCartUI();
-        initScrollAnimations();
-    });
-
-    function displayProducts() {
-        const productList = document.getElementById('product-list');
-        const filteredProducts = currentFilter === 'all' ? products : products.filter(p => p.category === currentFilter);
-        productList.innerHTML = '';
-        
-        filteredProducts.forEach((product, index) => {
-            const div = document.createElement('div');
-            div.className = 'product-card bg-white rounded-xl shadow-lg overflow-hidden border border-stone-200 fade-in-up stagger';
-            div.style.setProperty('--delay', `${index * 100}ms`);
-            div.innerHTML = `
-                <div class="overflow-hidden h-48">
-                    <img src="${product.image}" alt="${product.name}" class="product-image">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2 text-text-main">${product.name}</h3>
-                    <p class="text-text-muted mb-4 h-12">${product.desc}</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl font-extrabold text-text-main">$${product.price.toFixed(2)}</span>
-                        <button onclick="addToCart(${product.id})" class="bg-brand-maroon text-white px-4 py-2 rounded-full font-semibold hover:bg-brand-maroon-dark transition-colors flex items-center gap-2 transform hover:scale-105 relative overflow-hidden">
-                            <span class="absolute top-0 left-0 w-full h-full bg-white opacity-0 hover:opacity-10 transition-opacity"></span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg> Add
-                        </button>
-                    </div>
-                </div>`;
-            productList.appendChild(div);
-        });
-        initScrollAnimations();
-    }
-
-    function filterProducts(category, btnElement) {
-        currentFilter = category;
-        displayProducts();
-        
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.classList.remove('bg-brand-maroon', 'text-white');
-            btn.classList.add('bg-stone-200', 'text-text-main');
-        });
-        
-        btnElement.classList.add('bg-brand-maroon', 'text-white');
-        btnElement.classList.remove('bg-stone-200', 'text-text-main');
-    }
-
-    // --- CART LOGIC ---
-    function addToCart(productId) {
-        const product = products.find(p => p.id === productId);
-        const existingItem = cart.find(item => item.id === productId);
-        if (existingItem) { existingItem.quantity++; } 
-        else { cart.push({...product, quantity: 1}); }
-        updateCartUI();
-        showNotification(`'${product.name}' added to cart!`);
-    }
-    
-    function updateQuantity(productId, change) {
-        const cartItem = cart.find(item => item.id === productId);
-        if (cartItem) {
-            cartItem.quantity += change;
-            if (cartItem.quantity <= 0) { removeFromCart(productId); } 
-            else { updateCartUI(); }
-        }
-    }
-
-    function removeFromCart(productId) {
-        cart = cart.filter(item => item.id !== productId);
-        updateCartUI();
-    }
-
-    function updateCartUI() {
-        const cartItemsContainer = document.getElementById('cart-items');
-        const cartTotalEl = document.getElementById('cart-total');
-        const checkoutBtn = document.getElementById('checkout-btn');
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        document.getElementById('cart-count').textContent = totalItems;
-        document.getElementById('mobile-cart-count').textContent = totalItems;
-        document.getElementById('mobile-cart-count-icon').textContent = totalItems;
-        
-        if (cart.length === 0) {
-            cartItemsContainer.innerHTML = `<div class="text-center text-text-muted py-16"><svg class="w-16 h-16 mx-auto mb-4 text-stone-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg><p class="font-semibold text-lg">Your cart is empty</p><p>Add some fresh meats to get started!</p></div>`;
-            checkoutBtn.disabled = true;
-        } else {
-            checkoutBtn.disabled = false;
-            cartItemsContainer.innerHTML = '';
-            cart.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'flex items-center justify-between border-b border-stone-200 pb-4 mb-4';
-                div.innerHTML = `
-                    <div class="flex items-center gap-4">
-                        <div class="bg-gray-200 rounded-xl w-16 h-16 flex items-center justify-center overflow-hidden">
-                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
-                        </div>
-                        <div><h4 class="font-semibold text-text-main">${item.name}</h4><p class="text-text-muted">$${item.price.toFixed(2)}</p></div>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <button onclick="updateQuantity(${item.id}, -1)" class="w-8 h-8 bg-stone-200 rounded-full flex items-center justify-center hover:bg-stone-300 transition-colors">-</button>
-                        <span class="w-8 text-center font-semibold">${item.quantity}</span>
-                        <button onclick="updateQuantity(${item.id}, 1)" class="w-8 h-8 bg-stone-200 rounded-full flex items-center justify-center hover:bg-stone-300 transition-colors">+</button>
-                        <button onclick="removeFromCart(${item.id})" class="ml-2 text-brand-maroon/70 hover:text-brand-maroon transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm4 0a1 1 0 012 0v6a1 1 0 11-2 0V8z" clip-rule="evenodd" /></svg>
-                        </button>
-                    </div>`;
-                cartItemsContainer.appendChild(div);
-            });
-        }
-        const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        cartTotalEl.textContent = `$${totalPrice.toFixed(2)}`;
-    }
-
-    function toggleCart() {
-        const sidebar = document.getElementById('cart-sidebar');
-        const overlay = document.getElementById('cart-overlay');
-        const panel = document.getElementById('cart-panel');
-        const isOpen = !sidebar.classList.contains('pointer-events-none');
-        if (isOpen) {
-            overlay.classList.add('opacity-0');
-            panel.classList.add('translate-x-full');
-            setTimeout(() => sidebar.classList.add('pointer-events-none'), 300);
-        } else {
-            sidebar.classList.remove('pointer-events-none');
-            overlay.classList.remove('opacity-0');
-            panel.classList.remove('translate-x-full');
-        }
-    }
-
-    // --- UI & UX ---
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('hidden');
-    }
-
-    function showNotification(message) {
-        const notification = document.getElementById('notification');
-        notification.querySelector('#notification-text').textContent = message;
-        notification.style.transform = 'translateX(0)';
-        setTimeout(() => {
-            notification.style.transform = 'translateX(calc(100% + 2rem))';
-        }, 3000);
-    }
-    
-    function initScrollAnimations() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
-    }
-
-    function initFaqs() {
-        const container = document.getElementById('faq-container');
-        if(!container) return;
-        faqs.forEach(faq => {
-            const div = document.createElement('div');
-            div.className = 'border border-stone-200 rounded-lg bg-white';
-            div.innerHTML = `
-                <button class="faq-question flex justify-between items-center w-full p-5 text-left font-semibold text-text-main">
-                    <span>${faq.q}</span>
-                    <svg class="faq-icon w-5 h-5 transform transition-transform duration-300 text-brand-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
-                <div class="faq-answer px-5 text-text-muted"><p class="pb-5">${faq.a}</p></div>`;
-            container.appendChild(div);
-        });
-        container.addEventListener('click', (e) => {
-            const questionBtn = e.target.closest('.faq-question');
-            if (questionBtn) {
-                const answer = questionBtn.nextElementSibling;
-                const icon = questionBtn.querySelector('.faq-icon');
-                questionBtn.parentElement.classList.toggle('shadow-lg');
-                if (answer.style.maxHeight) {
-                    answer.style.maxHeight = null;
-                    icon.style.transform = 'rotate(0deg)';
-                } else {
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                    icon.style.transform = 'rotate(-180deg)';
-                }
-            }
-        });
-    }
-    
-    // Initialize animations
-    window.addEventListener('load', () => {
-        // Animate hero headline
-        document.querySelectorAll('.hero-headline span').forEach(span => {
-            span.style.animation = 'reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards';
-        });
-        
-        // Animate hero subtitle
-        document.querySelector('.hero-subtitle').style.animation = 'reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards';
-    });
-    </script>
-    
-    <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "Butcher",
       "name": "Premium Meats",
       "image": "https://premiummeats.com/images/logo.jpg",
-      "@id": "",
       "url": "https://premiummeats.com/",
       "telephone": "+1-512-246-7923",
       "priceRange": "$$",
@@ -1024,19 +413,12 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 30.4907297,
-        "longitude": -97.6806954
+        "latitude": 30.5342469,
+        "longitude": -97.6828753
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
+        "dayOfWeek": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
         "opens": "09:00",
         "closes": "20:00"
       },
@@ -1046,5 +428,7 @@
       ]
     }
     </script>
+    
+    <script src="script.js" defer></script>
 </body>
 </html>
